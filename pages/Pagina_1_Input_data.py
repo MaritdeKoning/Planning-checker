@@ -12,7 +12,7 @@ st.header('Input data')
 
 #voorbeeld data
 st.text('We willen dat de geleverde data er zo uit ziet (dit is een voorbeeld):\nAls U verder naar beneden scrollt kunt U de data invoeren')
-data = pd.read_excel(r'C:/Users/Petra/OneDrive - Office 365 Fontys/Toegepaste wiskunde/Jaar 2/Project/Project 5/programmeren/voorbeeld.xlsx')
+data = pd.read_excel(r'voorbeeld.xlsx')
 buslijn = data.Buslijn
 for i in range(len(data)):
     if buslijn[i] == 400:
