@@ -76,6 +76,7 @@ plotly
 plotly.express
 requests
 semver
+session_state
 Send2Trash
 six
 smmap
