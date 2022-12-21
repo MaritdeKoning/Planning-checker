@@ -19,7 +19,7 @@ st.header('Controle')
 
 #Data inlezen
 data = pd.read_excel(st.session_state.uploaded_file)
-ritten = pd.read_excel(r'C:/Users/Petra/OneDrive - Office 365 Fontys/Toegepaste wiskunde/Jaar 2/Project/Project 5/programmeren/Connexxion data - 2022-2023.xlsx')
+ritten = pd.read_excel(r'Connexxion data - 2022-2023.xlsx')
 
 ## Controle of alle busritten gereden worden.
 dienst = data.Dienst
