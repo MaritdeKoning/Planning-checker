@@ -7,7 +7,6 @@ Created on Mon Dec  5 10:34:47 2022
 #Imports
 import streamlit as st
 import pandas as pd
-pip install openpyxl
 
 st.header('Input data')
 
