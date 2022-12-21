@@ -12,7 +12,7 @@ import numpy as np
 st.header('Kwaliteit planning')
 st.subheader('De volgende kwaliteiten zitten aan de volgende wensen')
 data = pd.read_excel(st.session_state.uploaded_file)
-ritten = pd.read_excel(r'C:/Users/Petra/OneDrive - Office 365 Fontys/Toegepaste wiskunde/Jaar 2/Project/Project 5/programmeren/Connexxion data - 2022-2023.xlsx')
+ritten = pd.read_excel(r'Connexxion data - 2022-2023.xlsx')
 
 aantal_bussen = len(set(data['Bus']))
 
