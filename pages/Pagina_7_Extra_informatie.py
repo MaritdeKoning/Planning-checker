@@ -116,7 +116,7 @@ for i in range(aantal_bussen):
     st.caption(f'Bij bus {i+1} kun je {laagste_waarde_soc[i]:.1f} kWh terugleveren.')
     
 ## Grafiek energie levels bussen
-st.subheader('Overzicht energie levels bus gedurende dag')
+#st.subheader('Overzicht energie levels bus gedurende dag')
 data['Verbruik'] = verbruik
 # st.dataframe(data)
 
