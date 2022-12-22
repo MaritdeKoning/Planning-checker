@@ -72,6 +72,8 @@ python-dateutil
 pytz
 pytz-deprecation-shim
 pyzmq
+plotly 
+plotly.express
 requests
 semver
 Send2Trash
