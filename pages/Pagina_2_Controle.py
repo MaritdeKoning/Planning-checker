@@ -19,7 +19,7 @@ st.header('Controle')
 
 #Data inlezen
 data = pd.read_excel(st.session_state.uploaded_file)
-ritten = pd.read_excel(r'Connexxion data - 2022-2023.xlsx')
+ritten = pd.read_excel(st.session_state.uploaded_data)
 
 ## Controle of alle busritten gereden worden.
 dienst = data.Dienst
