@@ -10,6 +10,14 @@ import pandas as pd
 
 st.header('Input data')
 
+st.markdown('---')
+st.text('Vul als eerste hier de data van de dienstregeling in:')
+st.session_state.uploaded_data = st.file_uploader("Kies de data van de dienstregeling", type =['xlsx'])
+
+if st.session_state.uploaded_data:
+    dp = pd.read_excel(st.session_state.uploaded_data)
+st.markdown('---')
+
 #voorbeeld data
 st.text('We willen dat de geleverde data er zo uit ziet (dit is een voorbeeld):\nAls U verder naar beneden scrollt kunt U de data invoeren')
 data = pd.read_excel(r'voorbeeld.xlsx')
