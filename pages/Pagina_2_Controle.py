@@ -160,7 +160,7 @@ for i in range(len(data)):
     if data.Dienst[i] == 'Dienstrit':
         if lengte_rit[i] >= reistijd[data.Dienst[i]]['min'][data.Startlocatie[i]][data.Eindlocatie[i]] and lengte_rit[i] <= reistijd[data.Dienst[i]]['max'][data.Startlocatie[i]][data.Eindlocatie[i]]:
             pass
-     else:
+        else:
             counter6 += 1
             st.caption(f'Bij bus {data.Bus[i]} die om {data.Vertrek[i]} vertrekt is de lengte van de rit: {lengte_rit[i]} minuten en dus niet goed.')
         
