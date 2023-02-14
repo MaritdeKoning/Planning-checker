@@ -87,44 +87,9 @@ else:
     st.markdown(title_fout, unsafe_allow_html=True)
 st.markdown('---')
 
-## Minimaal 15 minuten aan de oplader liggen
-
-st.markdown('<p style="font-family:sans-serif; color:black; font-size: 22px;">4.Controle eis: Een bus moet minimaal 15 minuten aan de oplader liggen.</p>', unsafe_allow_html=True)
-def calcTime(enter,exit):
-    format="%H:%M:%S"
-    #Parsing the time to str and taking only the hour,minute,second 
-    #(without miliseconds)
-    enterStr = str(enter).split(".")[0]
-    exitStr = str(exit).split(".")[0]
-    #Creating enter and exit time objects from str in the format (H:M:S)
-    enterTime = datetime.strptime(enterStr, format)
-    exitTime = datetime.strptime(exitStr, format)
-    return exitTime - enterTime
-
-counter3=0
-counter4=0
-for i in range(len(data)):
-    if data.Buslijn[i] == 'Opladen':
-        duration = calcTime(data.Vertrek[i],data.Aankomst[i])
-        if str(duration) > '00:15:00':
-            counter3+=1
-        else:
-            counter4+=1
-            st.markdown(f'Bij bus {data.Bus[i]} die om {data.Vertrek[i]} vertrekt wordt er minder dan 15 minuten opgeladen: {duration}')
-            
-if counter4 == 0:
-    st.caption('De bussen laden nooit korter op dan 15 minuten')
-    st.markdown(title_goed, unsafe_allow_html=True)
-else: 
-    st.markdown(title_fout, unsafe_allow_html=True)
-st.markdown('---')
     
 ## minimale en maximale reistijd
-st.markdown('<p style="font-family:sans-serif; color:black; font-size: 22px;">5.Controle eis: Lengte rit moet voldoen aan minimum en maximum tijd.</p>', unsafe_allow_html=True)
-for i in range(len(data)):
-    if data.Dienst[i] == 'Dienstrit':
-        data.Dienst[i] = int(data.Buslijn[i])
-        
+
 #Dictionary met tijden aanmaken
 
 reistijd = {
@@ -164,7 +129,32 @@ for i in range(len(data)):
 
     lengte_rit.append(((db-da).seconds)/60)
     
+    
+
+#checken 15min opladen
+st.markdown('<p style="font-family:sans-serif; color:black; font-size: 22px;">4.Controle eis: Een bus moet minimaal 15 minuten aan de oplader liggen.</p>', unsafe_allow_html=True)
+counter4 = 0
+for i in range(len(data)):
+    if data.Dienst[i] == 'Opladen':
+        if lengte_rit[i] >= reistijd[data.Dienst[i]]['min'][data.Startlocatie[i]][data.Eindlocatie[i]] and lengte_rit[i] <= reistijd[data.Dienst[i]]['max'][data.Startlocatie[i]][data.Eindlocatie[i]]:
+            pass
+        else:
+            counter4 += 1
+            st.caption(f'Bij bus {data.Bus[i]} die om {data.Vertrek[i]} vertrekt is de lengte van het opladen: {lengte_rit[i]} minuten en dus niet goed.')
+        
+if counter4 == 0:
+    st.caption('De bussen laden nooit korter op dan 15 minuten')
+    st.markdown(title_goed, unsafe_allow_html=True)
+else: 
+    st.markdown(title_fout, unsafe_allow_html=True)
+st.markdown('---')
+    
 #Checken of de rittijden kloppen
+st.markdown('<p style="font-family:sans-serif; color:black; font-size: 22px;">5.Controle eis: Lengte rit moet voldoen aan minimum en maximum tijd.</p>', unsafe_allow_html=True)
+for i in range(len(data)):
+    if data.Dienst[i] == 'Dienstrit':
+        data.Dienst[i] = int(data.Buslijn[i])
+        
 counter6 = 0
 for i in range(len(data)):
     if lengte_rit[i] >= reistijd[data.Dienst[i]]['min'][data.Startlocatie[i]][data.Eindlocatie[i]] and lengte_rit[i] <= reistijd[data.Dienst[i]]['max'][data.Startlocatie[i]][data.Eindlocatie[i]]:
