@@ -311,7 +311,7 @@ st.markdown('---')
 st.subheader('Hier kunt u de resultaten zien:')
 st.text('Aan de linkerkant staat de eerste dataset, aan de rechterkant staat de tweede \ndataset')
 
-st.text('In dit figuur is te zien hoe goed de planningen scoren op het aantal bussen dat\n gebruikt wordt. De minimum lijn staat voor het aantal bussen dat minimaal\n gebruikt moet worden om alle ritten te rijden. De maximum lijn geeft aan\n hoeveel bussen er maximaal gebruikt mogen worden voor deze \n2 buslijnen.')
+st.text('In dit figuur is te zien hoe goed de planningen scoren op het aantal bussen dat\n gebruikt wordt. De minimum lijn staat voor het aantal bussen dat minimaal\n gebruikt moet worden om alle ritten te rijden. De maximum lijn geeft aan\n hoeveel bussen er maximaal gebruikt mogen worden voor deze \n 2 buslijnen.')
 f = go.FigureWidget()
 f.add_scatter(y=[maximale_bussen, maximale_bussen], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'maximum')
 f.add_scatter(y=[minimale_bussen, minimale_bussen], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'minimum')
