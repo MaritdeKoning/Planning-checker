@@ -311,11 +311,11 @@ st.markdown('---')
 st.subheader('Hier kunt u de resultaten zien:')
 st.write('Aan de linkerkant staat de eerste dataset, aan de rechterkant staat de tweede dataset')
 
-    
+st.text('In dit figuur is te zien hoe goed de planningen scoren op het aantal bussen dat gebruikt wordt. De minimum lijn staat voor het aantal bussen dat minimaal gebruikt moet worden om alle ritten te rijden.     
 f = go.FigureWidget()
 f.add_scatter(y=[maximale_bussen, maximale_bussen], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'maximum')
 f.add_scatter(y=[minimale_bussen, minimale_bussen], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'minimum')
-f.update_layout(title = 'Aantal bussen', title_x=0.45, xaxis_title = 'Datasets', yaxis_title = 'Aantal bussen')
+f.update_layout(title = 'Aantal bussen dat gebruikt wordt voor de planning', title_x=0.45, xaxis_title = 'Datasets', yaxis_title = 'Aantal bussen')
 f.add_bar(y=[aantal_bussen2, aantal_bussen3], x=[1,2], marker = dict(color = 'blue'), name = 'aantal bussen')
 st.plotly_chart(f)
 st.caption(f'Dataset 1: {aantal_bussen2} bussen')
