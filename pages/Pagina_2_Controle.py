@@ -157,12 +157,12 @@ for i in range(len(data)):
         
 counter6 = 0
 for i in range(len(data)):
-    st.markdown(data.Busrit[i])
-    if lengte_rit[i] >= reistijd[data.Dienst[i]]['min'][data.Startlocatie[i]][data.Eindlocatie[i]] and lengte_rit[i] <= reistijd[data.Dienst[i]]['max'][data.Startlocatie[i]][data.Eindlocatie[i]]:
-        pass
-    else:
-        counter6 += 1
-        st.caption(f'Bij bus {data.Bus[i]} die om {data.Vertrek[i]} vertrekt is de lengte van de rit: {lengte_rit[i]} minuten en dus niet goed.')
+    if data.Dienst[i] == '400':
+        if lengte_rit[i] >= reistijd[data.Dienst[i]]['min'][data.Startlocatie[i]][data.Eindlocatie[i]] and lengte_rit[i] <= reistijd[data.Dienst[i]]['max'][data.Startlocatie[i]][data.Eindlocatie[i]]:
+            pass
+        else:
+            counter6 += 1
+            st.caption(f'Bij bus {data.Bus[i]} die om {data.Vertrek[i]} vertrekt is de lengte van de rit: {lengte_rit[i]} minuten en dus niet goed.')
         
 if counter6 == 0:
     st.caption('De lengte van de dienstritten van de bussen zijn goed')
