@@ -157,7 +157,7 @@ for i in range(len(data)):
         
 counter6 = 0
 for i in range(len(data)):
-    st.markdown(data.Dienst[i])
+    st.markdown(data.Busrit[i])
     if lengte_rit[i] >= reistijd[data.Dienst[i]]['min'][data.Startlocatie[i]][data.Eindlocatie[i]] and lengte_rit[i] <= reistijd[data.Dienst[i]]['max'][data.Startlocatie[i]][data.Eindlocatie[i]]:
         pass
     else:
