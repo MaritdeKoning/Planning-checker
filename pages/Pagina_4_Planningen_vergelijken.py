@@ -309,9 +309,9 @@ maximale_verbruik_bus2 = 283.5*aantal_bussen3
 
 st.markdown('---')    
 st.subheader('Hier kunt u de resultaten zien:')
-st.write('Aan de linkerkant staat de eerste dataset, aan de rechterkant staat de tweede dataset')
+st.text('Aan de linkerkant staat de eerste dataset, aan de rechterkant staat de tweede dataset')
 
-st.text('In dit figuur is te zien hoe goed de planningen scoren op het aantal bussen dat gebruikt wordt. De minimum lijn staat voor \n het aantal bussen dat minimaal gebruikt moet worden om alle ritten te rijden. De maximum lijn geeft aan hoeveel bussen er maximaal \n gebruikt mogen worden voor deze 2 lijnen.')
+st.text('In dit figuur is te zien hoe goed de planningen scoren op het aantal bussen dat\n gebruikt wordt. De minimum lijn staat voor het aantal bussen dat\n minimaal gebruikt moet worden om alle ritten te rijden. De maximum lijn\n geeft aan hoeveel bussen er maximaal gebruikt mogen worden voor deze 2 lijnen.')
 f = go.FigureWidget()
 f.add_scatter(y=[maximale_bussen, maximale_bussen], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'maximum')
 f.add_scatter(y=[minimale_bussen, minimale_bussen], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'minimum')
@@ -322,7 +322,7 @@ st.caption(f'Dataset 1: {aantal_bussen2} bussen')
 st.caption(f'Dataset 2: {aantal_bussen3} bussen')
 
 st.markdown('---')    
-st.text("Dit figuur geeft de verhouding tussen de DPRU's en de DRU's weer. De twee lijnen geven een indicatie van wat een goede verhouding is.")
+st.text("Dit figuur geeft de verhouding tussen de DPRU's en de DRU's weer. De twee lijnen\n geven een indicatie van wat een goede verhouding is. Als de grafiek onder de\n ondergrens zit is het een uitstekende verhouding, als het erboven zit is het\n een slechte verhouding. Ertussenin is een goede verhouding.")
 f1 = go.FigureWidget()
 f1.add_scatter(y=[maximale_DDs, maximale_DDs], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'maximum')
 f1.add_scatter(y=[minimale_DDs, minimale_DDs], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'minimum')
