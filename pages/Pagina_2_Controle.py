@@ -157,7 +157,7 @@ for i in range(len(data)):
         
 counter6 = 0
 for i in range(len(data)):
-    if data.Dienst == 'Dienstrit'
+    if data.Dienst[i] == 'Dienstrit':
         if lengte_rit[i] >= reistijd[data.Dienst[i]]['min'][data.Startlocatie[i]][data.Eindlocatie[i]] and lengte_rit[i] <= reistijd[data.Dienst[i]]['max'][data.Startlocatie[i]][data.Eindlocatie[i]]:
             pass
      else:
