@@ -19,7 +19,7 @@ if st.session_state.uploaded_data:
 st.markdown('---')
 
 #voorbeeld data
-st.text('We willen dat de geleverde data er zo uit ziet (dit is een voorbeeld):\nAls U verder naar beneden scrollt kunt U de data invoeren')
+st.text('We willen dat de geleverde data er zo uit ziet (dit is een voorbeeld):\nAls U verder naar beneden scrollt kunt U de data voor de busritten invoeren')
 data = pd.read_excel(r'voorbeeld.xlsx')
 buslijn = data.Buslijn
 for i in range(len(data)):
@@ -41,7 +41,7 @@ st.dataframe(data)
 st.markdown('---')
 
 #data invoeren
-st.text('Hier kunt U de data invoeren:')
+st.text('Hier kunt U de data voor de busritten invoeren:')
 st.session_state.uploaded_file = st.file_uploader("Kies een bestand", type =['xlsx'])
 
 if st.session_state.uploaded_file:
