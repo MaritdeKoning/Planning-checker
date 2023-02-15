@@ -160,7 +160,7 @@ maximale_DDs = 1.8
 kwaliteit_DDs = ((maximale_DDs-DD)/(maximale_DDs-minimale_DDs))*100
 
 minimale_DPRUs = 5234
-maximale_DPRUs = 28800
+maximale_DPRUs = 1107*aantal_bussen
 kwaliteit_DPRUs = ((maximale_DPRUs-DPRU)/(maximale_DPRUs-minimale_DPRUs))*100
 
 minimale_verbruik = 0
