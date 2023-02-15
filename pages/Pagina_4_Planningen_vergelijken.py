@@ -338,7 +338,7 @@ st.text("In het volgende figuur is het totaal aantal DPRU's te zien. Dit minimum
 f3 = go.FigureWidget()
 f3.add_scatter(y=[maximale_DPRUs_bus1, maximale_DPRUs_bus1], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'maximum dataset 1')
 f3.add_scatter(y=[maximale_DPRUs_bus2, maximale_DPRUs_bus2], x=[0.5,2.5], marker=dict(size=0, color="orange"), name = 'maximum dataset 2')
-f3.add_scatter(y=[minimale_DPRUs, minimale_DPRUs], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'minimum')
+f3.add_scatter(y=[minimale_DPRUs, minimale_DPRUs], x=[0.5,2.5], marker=dict(size=0, color="green"), name = 'minimum')
 f3.update_layout(title = 'Aantal DPRUs', title_x=0.45, xaxis_title = 'Datasets', yaxis_title = 'Aantal DPRUs')
 f3.add_bar(y=[DPRU, DPRU1],x=[1,2], marker = dict(color = 'blue'), name = 'aantal DPRUs')
 st.plotly_chart(f3)
