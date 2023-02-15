@@ -56,10 +56,12 @@ for i in range(1,len(data)):
     eindtijd = data['Aankomst'][i-1]
     starttijd = data['Vertrek'][i]
     bl = data['Buslijn'][i]
-    #if isnan(bl):
     if eindtijd > starttijd and data['Bus'][i]==data['Bus'][i-1]:
-        st.caption(f'Bij bus {data.Bus[i]} die om {data.Vertrek[i]} vertrekt is de eindtijd = {eindtijd} en starttijd = {starttijd}')
-        counter += 1
+        if (str(starttijd))[0:2] == '00' and (str(starttijd))[3:5] < '30':
+            pass
+        else:
+            st.caption(f'Bij bus {data.Bus[i]} die om {data.Vertrek[i]} vertrekt is de eindtijd = {eindtijd} en starttijd = {starttijd}')
+            counter += 1
 
 #printen van de eis
 if counter == 0:
