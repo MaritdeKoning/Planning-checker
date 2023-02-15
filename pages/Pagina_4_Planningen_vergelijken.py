@@ -301,7 +301,8 @@ minimale_DDs = 1.3
 maximale_DDs = 1.8
 
 minimale_DPRUs = 5234
-maximale_DPRUs = 28800
+maximale_DPRUs_bus1 = 1107*aantal_bussen2
+maximale_DPRUs_bus2 = 1107*aantal_bussen3
 
 minimale_verbruik = 0
 maximale_verbruik_bus1 = 283.5*aantal_bussen2
@@ -335,7 +336,8 @@ st.caption(f'Dataset 2: {DD1:.2f} DDs')
 st.markdown('---')
 st.text("In het volgende figuur is het totaal aantal DPRU's te zien. Dit minimum en\n maximum zijn berekend op basis van verschillende factoren. Ook hier geldt weer\n een minimum en maximum waar het aantal DPRU's tussen moet zitten.")
 f3 = go.FigureWidget()
-f3.add_scatter(y=[maximale_DPRUs, maximale_DPRUs], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'maximum')
+f3.add_scatter(y=[maximale_DPRUs_bus1, maximale_DPRUs_bus1], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'maximum dataset 1')
+f3.add_scatter(y=[maximale_DPRUs_bus2, maximale_DPRUs_bus2], x=[0.5,2.5], marker=dict(size=0, color="orange"), name = 'maximum dataset 2')
 f3.add_scatter(y=[minimale_DPRUs, minimale_DPRUs], x=[0.5,2.5], marker=dict(size=0, color="red"), name = 'minimum')
 f3.update_layout(title = 'Aantal DPRUs', title_x=0.45, xaxis_title = 'Datasets', yaxis_title = 'Aantal DPRUs')
 f3.add_bar(y=[DPRU, DPRU1],x=[1,2], marker = dict(color = 'blue'), name = 'aantal DPRUs')
